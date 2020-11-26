@@ -18,7 +18,7 @@ box-sizing: border-box;
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-      <form id="fquestion" name="fquestion" action="AddQuestion.php" method="get">
+      <form id="fquestion" name="fquestion" action="AddQuestion.php" method="post">
         <label for="email">Email*:</label>
         <input type="text" name="email" id="email" placeholder="panchi001@ikasle.ehu.eus">
         <br>

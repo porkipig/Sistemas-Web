@@ -5,18 +5,30 @@
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
+  <?php include '../php/DbConfig.php' ?>
   <section class="main" id="s1">
+
     <div>
-		 <!--
-      el correo de del usuario es el siguiente <?php: echo $_GET["email"]; echo $_GET["mail"] ?>
-    -->
-    <? php
-    $mysqli = mysqli_connect('127.0.0.1','panchibase','9uZvReIL576SufkL','quiz');
-    if(!mysqli){
+    <?php
+    $mysqli = mysqli_connect($server,$user,$pass,$basededatos);
+    if(!$mysqli){
       die('Fallo al conectar a MySQL: '. mysqli_connect_error());
+    } else {
+      echo 'Se ha relizado la conexión exitosamente';
+      echo '<br>';
+      echo 'Información del host: ' . mysqli_get_host_info($mysqli) . PHP_EOL;
     }
-    echo 'Se ha relizado la conexión exitosamente';ç
-    echo 'Información del host: ' . mysqli_get_host_info($mysqli) . PHP_EOL;
+
+    $sql = "insert into quiz (Mail, Statement, Correct, Incorrect1, Incorrect2, Incorrect3, Complexity, Subject) values ('".$_POST['email']."','".$_POST['stat']."','".$_POST['right']."','".$_POST['wrong1']."','".$_POST['wrong2']."','".$_POST['wrong3']."','".$_POST['difil']."','".$_POST['subject']."')";
+    echo '<br>';
+    // echo $sql; shhaa funsyonà
+    if(!mysqli_query($mysqli, $sql)){
+      die('Error: ' . mysqli_error($mysqli) );
+    } else {
+      echo 'Se han insertado los datos correctamente';
+
+    }
+
     mysqli_close($mysqli);
     ?>
 
