@@ -1,15 +1,15 @@
 <?php
 $local=1; //0 para la nube
-if ($local==1){
+if ($local==0){
     $server="localhost";
-    $user="panchibase";
-    $pass="9uZvReIL576SufkL";
+    $user="root";
+    $pass="";
     $basededatos="quiz";
 }
 else{
     $server="localhost";
-    $user="";
-    $pass="";
-    $basededatos="";
+    $user="id14935014_panchibase";
+    $pass="vqb5Q{97U|l0x2W8";
+    $basededatos="id14935014_quiz";
 }
 ?>

@@ -2,10 +2,10 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <?php include '../php/DbConfig.php' ?>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
-  <?php include '../php/DbConfig.php' ?>
   <section class="main" id="s1">
 
     <div>
@@ -26,10 +26,11 @@
       die('Error: ' . mysqli_error($mysqli) );
     } else {
       echo 'Se han insertado los datos correctamente';
-
     }
 
     mysqli_close($mysqli);
+    echo '<br>';
+    echo "<a href='../php/ShowQuestions.php'>Ver los datos introducidos, pinsha acààààà</a>";
     ?>
 
     </div>
